@@ -4,7 +4,7 @@ import 'package:journal_app/core/res/asset_images.dart';
 import 'package:lottie/lottie.dart';
 
 class UnknownScreen extends StatelessWidget {
-  const UnknownScreen({Key? key, required this.payload}) : super(key: key);
+  const UnknownScreen({required this.payload, Key? key}) : super(key: key);
 
   final String payload;
 

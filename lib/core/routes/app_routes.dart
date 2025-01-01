@@ -1,3 +1,4 @@
 class AppRoutes {
-  static const onBoarding = '/';
+  static const splash = '/';
+  static const onBoarding = '/onboarding';
 }

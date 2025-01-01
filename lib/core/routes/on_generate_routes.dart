@@ -1,9 +1,14 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:journal_app/core/common/views/unknown_screen.dart';
 import 'package:journal_app/core/routes/app_routes.dart';
+import 'package:journal_app/core/services/injection_container.dart';
+import 'package:journal_app/src/onboarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:journal_app/src/onboarding/presentation/views/on_boarding_screen.dart';
+import 'package:journal_app/src/splash/presentation/cubit/splash_cubit.dart';
+import 'package:journal_app/src/splash/presentation/views/splash_screen.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   final String? name = settings.name;
@@ -11,9 +16,20 @@ Route<dynamic> generateRoute(RouteSettings settings) {
   final uri = Uri.parse(name ?? '');
 
   switch (name) {
+    case AppRoutes.splash:
+      return _pageBuilder(
+        (_) => BlocProvider(
+          create: (_) => sl<SplashCubit>(),
+          child: const SplashScreen(),
+        ),
+        settings: settings,
+      );
     case AppRoutes.onBoarding:
       return _pageBuilder(
-        (_) => const OnBoardingScreen(),
+        (_) => BlocProvider(
+          create: (_) => sl<OnBoardingCubit>(),
+          child: OnBoardingScreen(),
+        ),
         settings: settings,
       );
     default:
