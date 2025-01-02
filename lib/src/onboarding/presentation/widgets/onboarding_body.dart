@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:journal_app/core/common/extensions/context_extension.dart';
+import 'package:journal_app/core/routes/app_routes.dart';
 import 'package:journal_app/core/theme/colors.dart';
 import 'package:journal_app/src/onboarding/domain/entities/page_content.dart';
 
@@ -45,8 +46,7 @@ class OnBoardingBody extends StatelessWidget {
                     foregroundColor: Colors.white,
                   ),
                   onPressed: () {
-                    // cache user
-                    //;
+                    context.navigator.popAndPushNamed(AppRoutes.journal);
                   },
                   child: const Text(
                     'Get Started',

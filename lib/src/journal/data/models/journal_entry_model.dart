@@ -1,9 +1,15 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 part 'journal_entry_model.g.dart';
 
 @HiveType(typeId: 0)
 class JournalEntryModel {
+  JournalEntryModel({
+    required this.content,
+    required this.mood,
+    required this.date,
+  });
+
   @HiveField(0)
   final String content;
 
@@ -12,7 +18,4 @@ class JournalEntryModel {
 
   @HiveField(2)
   final DateTime date;
-
-  JournalEntryModel(
-      {required this.content, required this.mood, required this.date});
 }

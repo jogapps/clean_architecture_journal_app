@@ -8,11 +8,13 @@ abstract class JournalRepository {
   Future<Either<String, MotivationalMessage>> fetchMotivationalMessage();
 
   /// Fetches health metrics such as step count and heart rate from the API.
-  Future<Either<String, HealthMetrics>> fetchHealthMetrics();
+  Future<HealthMetrics> fetchHealthMetrics();
 
   /// Saves a journal entry locally.
   Future<Either<String, void>> saveJournalEntry(JournalEntry entry);
 
   /// Retrieves all saved journal entries from local storage.
   Future<Either<String, List<JournalEntry>>> getJournalEntries();
+
+  Future<Either<String, void>> deleteJournalEntry(int index);
 }

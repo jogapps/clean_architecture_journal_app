@@ -1,8 +1,4 @@
 class HealthMetricsModel {
-  final int steps;
-  final int heartRate;
-  final DateTime lastUpdated;
-
   HealthMetricsModel({
     required this.steps,
     required this.heartRate,
@@ -16,4 +12,7 @@ class HealthMetricsModel {
       lastUpdated: DateTime.parse(json['lastUpdated'] as String),
     );
   }
+  final int steps;
+  final int heartRate;
+  final DateTime lastUpdated;
 }

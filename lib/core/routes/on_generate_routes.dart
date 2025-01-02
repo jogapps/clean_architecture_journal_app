@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:journal_app/core/common/views/unknown_screen.dart';
 import 'package:journal_app/core/routes/app_routes.dart';
 import 'package:journal_app/core/services/injection_container.dart';
+import 'package:journal_app/src/journal/presentation/cubit/journal_cubit.dart';
+import 'package:journal_app/src/journal/presentation/views/journal_screen.dart';
 import 'package:journal_app/src/onboarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:journal_app/src/onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:journal_app/src/splash/presentation/cubit/splash_cubit.dart';
@@ -29,6 +31,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         (_) => BlocProvider(
           create: (_) => sl<OnBoardingCubit>(),
           child: OnBoardingScreen(),
+        ),
+        settings: settings,
+      );
+    case AppRoutes.journal:
+      return _pageBuilder(
+        (_) => BlocProvider(
+          create: (_) => sl<JournalCubit>()..loadInitialData(),
+          child: const JournalScreen(),
         ),
         settings: settings,
       );

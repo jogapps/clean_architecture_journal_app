@@ -10,4 +10,6 @@ extension ContextExt on BuildContext {
   double get width => size.width;
 
   double get height => size.height;
+
+  NavigatorState get navigator => Navigator.of(this);
 }

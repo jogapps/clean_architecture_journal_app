@@ -7,6 +7,9 @@ class HealthMetrics extends Equatable {
     required this.lastUpdated,
   });
 
+  HealthMetrics.empty()
+      : this(steps: 1, heartRate: 7, lastUpdated: DateTime.timestamp());
+
   final int steps;
   final int heartRate;
   final DateTime lastUpdated;
