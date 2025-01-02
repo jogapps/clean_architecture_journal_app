@@ -3,6 +3,10 @@ import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:journal_app/core/services/hive_setup.dart';
 import 'package:journal_app/core/utils/constants.dart';
+import 'package:journal_app/src/dashboard/domain/usecases/fetch_mood_trends.dart';
+import 'package:journal_app/src/dashboard/domain/usecases/fetch_most_positive_entry.dart';
+import 'package:journal_app/src/dashboard/domain/usecases/fetch_total_steps.dart';
+import 'package:journal_app/src/dashboard/presentation/cubit/dashboard_cubit.dart';
 import 'package:journal_app/src/journal/data/datasources/health_metrics_remote_data_source.dart';
 import 'package:journal_app/src/journal/data/datasources/journal_local_data_source.dart';
 import 'package:journal_app/src/journal/data/models/journal_entry_model.dart';
@@ -30,9 +34,7 @@ Future<void> init() async {
     ..registerLazySingleton(Dio.new)
 
     // **Cubit/Bloc**
-    ..registerFactory(
-      SplashCubit.new,
-    )
+    ..registerFactory(SplashCubit.new)
     ..registerFactory(
       () => OnBoardingCubit(sl()),
     ) // Pass FetchMotivationalMessage use case
@@ -43,6 +45,11 @@ Future<void> init() async {
           fetchJournalEntries: sl(),
           deleteJournalEntry: sl(),
         ))
+    ..registerFactory(() => DashboardCubit(
+          fetchMoodTrends: sl(),
+          fetchMostPositiveEntry: sl(),
+          fetchTotalSteps: sl(),
+        ))
 
     // **Use Cases**
     ..registerLazySingleton(
@@ -51,7 +58,10 @@ Future<void> init() async {
     ..registerLazySingleton(() => FetchHealthMetrics(sl()))
     ..registerLazySingleton(() => SaveJournalEntry(sl()))
     ..registerLazySingleton(() => FetchJournalEntries(sl()))
-    ..registerLazySingleton(() => DeleteJournalEntry(sl())) // Pass repository
+    ..registerLazySingleton(() => DeleteJournalEntry(sl()))
+    ..registerLazySingleton(() => FetchMoodTrends(sl()))
+    ..registerLazySingleton(() => FetchMostPositiveEntry(sl()))
+    ..registerLazySingleton(() => FetchTotalSteps(sl())) // Pass repository
 
     // **Repositories**
     ..registerLazySingleton<MotivationalMessageRepository>(

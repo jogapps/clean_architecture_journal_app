@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:journal_app/core/res/asset_images.dart';
+import 'package:journal_app/core/theme/colors.dart';
 import 'package:journal_app/src/journal/presentation/cubit/journal_cubit.dart';
 import 'package:journal_app/src/journal/presentation/widgets/journey_content.dart';
+import 'package:lottie/lottie.dart';
 
 class JournalScreen extends StatelessWidget {
   const JournalScreen({super.key});
@@ -10,14 +13,16 @@ class JournalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: KColors.teal,
         title: const Text('Journal Entry'),
         centerTitle: true,
       ),
       body: BlocBuilder<JournalCubit, JournalState>(
         builder: (context, state) {
           if (state is JournalLoading) {
-            return const Center(child: CircularProgressIndicator());
+            return Center(
+              child: Lottie.asset(AssetImages.loading),
+            );
           } else if (state is JournalError) {
             return Center(
               child: Text(

@@ -7,19 +7,8 @@ import 'package:journal_app/src/onboarding/presentation/cubit/on_boarding_cubit.
 import 'package:journal_app/src/onboarding/presentation/widgets/onboarding_body.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-class OnBoardingScreen extends StatefulWidget {
-  @override
-  State<OnBoardingScreen> createState() => _OnBoardingScreenState();
-}
-
-class _OnBoardingScreenState extends State<OnBoardingScreen> {
+class OnBoardingScreen extends StatelessWidget {
   final pageController = PageController();
-
-  @override
-  void initState() {
-    super.initState();
-    context.read<OnBoardingCubit>().getMotivationalMessage();
-  }
 
   @override
   Widget build(BuildContext context) {

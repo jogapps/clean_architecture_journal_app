@@ -12,4 +12,6 @@ extension ContextExt on BuildContext {
   double get height => size.height;
 
   NavigatorState get navigator => Navigator.of(this);
+
+  ScaffoldMessengerState get scaffoldMessenger => ScaffoldMessenger.of(this);
 }

@@ -14,6 +14,7 @@ class KColors {
   static const inputBorder = Color(0xffdedfe2);
   static const textLight = Color(0xff747c87);
   static const textVeryLight = Color(0xffB2B2B2);
+  static const teal = Colors.teal;
 }
 
 final Map<int, Color> colorMapLight = {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:journal_app/core/common/views/loading_views.dart';
 import 'package:journal_app/src/onboarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:journal_app/src/onboarding/presentation/views/on_boarding_screen.dart';
 import 'package:mocktail/mocktail.dart';
@@ -38,7 +39,7 @@ void main() {
     );
 
     // Ensure the CircularProgressIndicator is displayed
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(LoadingView), findsOneWidget);
   });
 
   testWidgets('Displays error message when state is OnboardingError',

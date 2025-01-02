@@ -16,7 +16,7 @@ class MotivationalMessageDataSourceImpl
     // Simulate API response
     // final response = await dioClient.get(Constants.motivationalMessageUrl);
     // return MotivationalMessageModel.fromJson(response.data);
-    await Future<void>.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(const Duration(seconds: 1));
     final response = {'message': "You're doing great! Keep it up!"};
     return MotivationalMessageModel.fromJson(response);
   }

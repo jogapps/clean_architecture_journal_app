@@ -8,7 +8,7 @@ class HealthMetricsRemoteDataSource {
   Future<HealthMetricsModel> fetchHealthMetrics() async {
     // final response = await apiClient.get(Constants.healthMetricsUrl);
     // return HealthMetricsModel.fromJson(response.data);
-    await Future<void>.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(const Duration(seconds: 1));
     final response = {
       'steps': 7200,
       'heartRate': 72,

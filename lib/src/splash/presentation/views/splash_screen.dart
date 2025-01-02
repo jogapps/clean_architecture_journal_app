@@ -6,19 +6,8 @@ import 'package:journal_app/core/routes/app_routes.dart';
 import 'package:journal_app/src/splash/presentation/cubit/splash_cubit.dart';
 import 'package:lottie/lottie.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
-
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<SplashCubit>().loadingSplash();
-  }
 
   @override
   Widget build(BuildContext context) {

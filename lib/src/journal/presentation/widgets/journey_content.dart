@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:journal_app/core/common/extensions/context_extension.dart';
+import 'package:journal_app/core/common/widgets/app_elevated_button.dart';
+import 'package:journal_app/core/res/asset_images.dart';
+import 'package:journal_app/core/routes/app_routes.dart';
 import 'package:journal_app/core/theme/colors.dart';
 import 'package:journal_app/core/theme/theme_style.dart';
 import 'package:journal_app/src/journal/presentation/cubit/journal_cubit.dart';
+import 'package:lottie/lottie.dart';
 
 class JournalContent extends StatefulWidget {
   const JournalContent({
@@ -119,7 +124,7 @@ class _JournalContentState extends State<JournalContent> {
                   },
                 );
               } else if (state is JournalLoading) {
-                return const Center(child: CircularProgressIndicator());
+                return Center(child: Lottie.asset(AssetImages.loading));
               } else {
                 return const Center(child: Text('Failed to load entries.'));
               }
@@ -127,32 +132,22 @@ class _JournalContentState extends State<JournalContent> {
           ),
         ),
         const SizedBox(height: PADDING_LG),
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.teal,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-            padding: const EdgeInsets.symmetric(vertical: 14),
-          ),
-          onPressed: () {
-            context
-                .read<JournalCubit>()
-                .saveEntry(_controller.text, _selectedMood);
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Journal entry saved!')),
-            );
-          },
-          child: const Center(
-            child: Text(
-              'Save Entry',
-              style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
+        AppElevatedButton(
+            text: 'Save Entry',
+            onPressed: () {
+              context
+                  .read<JournalCubit>()
+                  .saveEntry(_controller.text, _selectedMood);
+              context.scaffoldMessenger.showSnackBar(
+                const SnackBar(content: Text('Journal entry saved!')),
+              );
+            }),
+        const SizedBox(height: PADDING),
+        AppElevatedButton(
+          text: 'Go to Dashboard',
+          onPressed: () => context.navigator.pushNamed(AppRoutes.dashboard),
         ),
+        const SizedBox(height: PADDING),
       ],
     );
   }
