@@ -38,14 +38,14 @@
 
 
     git clone https://github.com/jogapps/clean_architecture_journal_app
-    cd clean_architecture_journal_app
+    && cd clean_architecture_journal_app
 
 
 2. Install Packages
 
 
     flutter pub get
-    flutter pub run build_runner build
+    && flutter pub run build_runner build
 
 
 3. Start/Run Project
