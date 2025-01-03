@@ -1,10 +1,8 @@
 # Journal_app
 
-With clean architecture
 
 ## Getting Started
 
-Project uses clean architecture with a TDD architecture
 
 ### Tools / Architecture
 - Clean Architecture with TDD (Test Driven Design) approach
@@ -33,13 +31,7 @@ Project uses clean architecture with a TDD architecture
   - Displays last 7 journals in a chart
   - Displays most positive entry
   - Displays total steps fetched from API
-
-### Prerequisites
-Before you start, ensure you have the following installed:
-
-- Node.js (v14 or above)
-- npm (v6 or above)
-- Kafka Setup
+  
 
 ## Setup Instructions
 1. Clone the Repository
@@ -62,7 +54,6 @@ Before you start, ensure you have the following installed:
     run from android studio/visual studio code
     or use below command
     flutter run
-
 
 
 
