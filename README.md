@@ -1,16 +1,69 @@
-# journal_app
+# Journal_app
 
 With clean architecture
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Project uses clean architecture with a TDD architecture
 
-A few resources to get you started if this is your first Flutter project:
+### Tools / Architecture
+- Clean Architecture with TDD (Test Driven Design) approach
+- Bloc/Cubit - State Management
+- Database - Hive
+- Dependency injection - get_it
+- analysis package - very_good_analysis
+- Test - flutter_test, bloc_test, mocktail
+- Animations - lottie
+- Chart - syncfusion_flutter_charts
+- feature based folder structure over project based approach
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Features 
+
+- Splash Screen: with lottie animations.
+- OnBoarding: 
+  - Using Pageview with 3 visually engaging screens 
+  - Fetches motivation from API and display in third slide
+  - Full test coverage
+- Journal:
+    - Get and display Motivational message from API.
+    - Get and display User steps from API
+    - Save/View/Delete journals (Thoughts, mood and date);
+- Visualization Dashboard:
+  - Displays last 7 journals in a chart
+  - Displays most positive entry
+  - Displays total steps fetched from API
+
+### Prerequisites
+Before you start, ensure you have the following installed:
+
+- Node.js (v14 or above)
+- npm (v6 or above)
+- Kafka Setup
+
+## Setup Instructions
+1. Clone the Repository
+
+
+    git clone https://github.com/jogapps/clean_architecture_journal_app
+    cd clean_architecture_journal_app
+
+
+2. Install Packages
+
+
+    flutter pub get
+    flutter pub run build_runner build
+
+
+3. Start/Run Project
+
+
+    run from android studio/visual studio code
+    or use below command
+    flutter run
+
+
+
+
+
