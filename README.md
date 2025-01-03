@@ -55,9 +55,13 @@
     or use below command
     flutter run
 
-![Splash Screen](https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/splash.png)
+<br/>
+<img src="https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/splash.png" alt="Splash Screen" width="200" height="400">
+
 ![OnBoarding Screen](https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/onboarding.png)
-![Journal Screen](https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/journal.png)
-![Chart Screen](https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/chart.png)
+
+<img src="https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/journal.png" alt="Journal Screen" width="200" height="400">
+<p>
+<img src="https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/chart.png" alt="Chart Screen" width="200" height="400">
 
 
