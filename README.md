@@ -44,16 +44,16 @@
 2. Install Packages
 
 
-    flutter pub get
-    && flutter pub run build_runner build
+    flutter pub get &&
+    flutter pub run build_runner build
 
 
 3. Start/Run Project
 
 
-    run from android studio/visual studio code
-    or use below command
-    flutter run
+    - run from android studio/visual studio code
+    - or use below command
+    - flutter run
 
 <br/>
 <img src="https://jogapps-public-assets.s3.eu-west-2.amazonaws.com/github/splash.png" alt="Splash Screen" width="200" height="400">
